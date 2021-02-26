@@ -7,10 +7,9 @@ contract FeedFactory {
     mapping(address=>bool) public isFeed;
 
     function create() public returns (PriceFeed) {
-        PriceFeed feed = new PriceFeed();
-        emit Created(msg.sender, address(feed));
-        feed.setOwner(msg.sender);
+        address feed = new PriceFeed();
+        emit Created(msg.sender, feed);
+        PriceFeed(feed).setOwner(msg.sender);
         isFeed[feed] = true;
-        return feed;
-    }
+        return PriceFeed(feed);
 }
