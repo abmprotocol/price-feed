@@ -1,8 +1,9 @@
 pragma solidity ^0.4.23;
 
 import "./price-feed.sol";
+import 'ds-auth/auth.sol';
 
-contract FeedFactory {
+contract FeedFactory is DSAuth{
     event Created(address indexed sender, address feed);
     mapping(address=>bool) public isFeed;
 
