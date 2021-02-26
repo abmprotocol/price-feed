@@ -12,4 +12,4 @@ contract FeedFactory {
         PriceFeed(feed).setOwner(msg.sender);
         isFeed[feed] = true;
         return PriceFeed(feed);
-}
+}}
