@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-import "./price-feed.sol";
+import "src/price-feed.sol";
 
 contract FeedFactory {
     event Created(address indexed sender, address feed);
